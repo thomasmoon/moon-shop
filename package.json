@@ -1,7 +1,11 @@
 {
   "name": "moon-shop",
+  "description": "A modern React-based e-commerce frontend using Next.js and default Tailwind classes.",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Thomas Moon"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

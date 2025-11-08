@@ -1,4 +1,4 @@
-import ProductSearch from "@/app/components/productSearch";
+import ProductsSearch from "@/app/components/productsSearch";
 import { cn } from "@/app/lib/ui.shadcn.com/utils";
 
 export interface HeaderProps extends React.ComponentProps<"div"> {
@@ -16,7 +16,7 @@ export default function Header({ className, showSearch = true, ...props }: Heade
           A modern React-based e-commerce frontend using Next.js and default Tailwind classes.
         </p>
       </div>
-      {showSearch && <ProductSearch /> }
+      {showSearch && <ProductsSearch /> }
     </div>
   )
 }

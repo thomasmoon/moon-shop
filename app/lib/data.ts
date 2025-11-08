@@ -6,10 +6,7 @@ export async function fetchProductCategoryData() {
 
     return fetch(productsEndpoint + '/categories')
         .then(res => res.json())
-        .then(json => {
-            console.log('Product categories', json);
-            return json
-        })
+        .then(json => json)
 }
 
 export async function fetchProductsData() {
@@ -18,8 +15,5 @@ export async function fetchProductsData() {
 
     return fetch(productsEndpoint)
         .then(res => res.json())
-        .then(json => {
-            console.log('Products', json);
-            return json
-        })
+        .then(json => json)
 }

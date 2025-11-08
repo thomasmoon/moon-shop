@@ -1,22 +1,17 @@
-import Link from 'next/link';
-import ProductCard from '@/app/components/productCard';
 import { fetchProductsData } from '@/app/lib/data';
-import { ProductsData, Product } from '@/app/lib/types';
+import ProductsList from '@/app/components/productsList';
+import { ProductsData } from '@/app/lib/types';
 
-export default async function Products() {
-  const products:ProductsData = await fetchProductsData()
-  
-  const renderProducts = products.products.map((product:Product) =>
-    <Link key={product.id} href="/product" className='flex w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-2'>
-        <ProductCard className='shadow rounded p-4 hover:bg-gray-100 hover:dark:bg-slate-800 hover:cursor-pointer' product={product} />
-    </Link>
-  );
+export default async function Products({ productName }: { productName: string }) {
+  const productsData:ProductsData = await fetchProductsData()
 
+  const filteredProducts = productsData.products.filter(p => !productName || p.title.toLowerCase().includes(productName.toLowerCase()))
+    
   return (
     <div>
-      <h2 className='mb-8 text-xl'>{products.total} products</h2>
+      <h2 className='mb-8 text-xl'>{filteredProducts.length} product(s)</h2>
       <div className="flex flex-row flex-wrap items-stretch content-stretch -m-2">
-        {renderProducts}
+        <ProductsList products={filteredProducts} />
       </div>
     </div>
     

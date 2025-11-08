@@ -2,13 +2,13 @@ import { Product, Review } from '@/app/lib/types';
 
 import { Angry, Frown, Laugh, LucideIcon, Meh, Smile } from 'lucide-react'
 
-interface ProductReviewsProps extends React.ComponentProps<"div"> {
+interface ProductsReviewsProps extends React.ComponentProps<"div"> {
   product: Product
 }
 
 const ratingToFace = [Angry, Frown, Meh, Smile, Laugh]
 
-export default function ProductReviews({ product, ...props }: ProductReviewsProps) {
+export default function ProductsReviews({ product, ...props }: ProductsReviewsProps) {
 
   const renderReview = (productId:number, review:Review, reviewIndex: number ) => {
     const Icon: LucideIcon = ratingToFace[review.rating - 1]

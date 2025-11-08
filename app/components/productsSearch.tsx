@@ -6,7 +6,7 @@ import { Input } from "@/app/components/ui.shadcn.com/input";
 import { InputWithLabel } from "@/app/components/ui.shadcn.com/inputWithLabel";
 import { cn } from "@/app/lib/ui.shadcn.com/utils";
 
-export default function ProductSearch({ className, ...props }: React.ComponentProps<typeof Input>) {
+export default function ProductsSearch({ className, ...props }: React.ComponentProps<typeof Input>) {
   const searchParams = useSearchParams()
   const pathname = usePathname()
   const { replace } = useRouter()
